@@ -1,0 +1,9 @@
+<%= f = form_for @changeset, "#",
+  id: "post-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+<%= textarea f, :body, placeholder: "What's happening?" %>
+<%= error_tag f, :body %>
+<%= submit "Tweet", phx_disable_with: "Saving..." %>
+</form>

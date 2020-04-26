@@ -1,0 +1,11 @@
+<%= live_component @socket, TwitterCloneWeb.PostLive.FormComponent,
+    id: :new,
+    action: :new,
+    post: @post
+    %>
+<div id="posts" phx-update="prepend">
+  <%= for post <- @posts do %>
+    <%= live_component @socket, TwitterCloneWeb.PostLive.PostComponent, id: post.id, post: post %>
+  <% end %>
+</div>
+</table>
